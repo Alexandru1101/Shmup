@@ -5,11 +5,14 @@ using UnityEngine;
 public class BasicEnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
-    float speed=7;
     public int hp=2;
+    public float speed;
+
+    private GameManager gameManager;
     void Start()
     {
-        
+        speed=Random.Range(7.0f,10.0f);
+        gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -18,7 +21,12 @@ public class BasicEnemyController : MonoBehaviour
         transform.Translate(Vector2.down*speed*Time.deltaTime);
 
         if(hp==0)
-            Destroy(gameObject);
+            {
+                Destroy(gameObject);
+                gameManager.UpdateScore(1);
+            
+
+            }
 
 
         if(transform.position.y<-10)
