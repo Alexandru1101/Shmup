@@ -9,6 +9,7 @@ public class RepeatBackground : MonoBehaviour
   Vector2 startPos;
   private float repeat=95;
 
+
     void Start()
     {
         startPos=transform.position;
@@ -19,7 +20,7 @@ public class RepeatBackground : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(Vector2.down*0.05f);
+        transform.Translate(Vector2.down*15.0f*Time.deltaTime);
         if(transform.position.y<startPos.y-repeat)
             {
                 transform.position=startPos;

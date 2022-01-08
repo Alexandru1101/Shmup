@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
+    int hp=3;
     public float horizontalInput;
     public float verticalInput;
     public float moveSpeed=15.0f;
@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
         Move();
        
+       
          
     }
 
@@ -63,5 +64,14 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet,transform.position,transform.rotation);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Enemy"))
+         {
+             hp--;
+             Destroy(other.gameObject);
+         }
     }
 }
