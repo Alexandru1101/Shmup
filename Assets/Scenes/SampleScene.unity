@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 110.5, y: 8.200012}
+  m_AnchoredPosition: {x: 108.48, y: 36.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135062698
@@ -287,6 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5730207623849693546, guid: 1d9cea490bdb04d4ca6b123bff46a495, type: 3}
+  Player: {fileID: 0}
+  HealthUi: {fileID: 0}
   PauseScreen: {fileID: 519539494}
   swarmPrefab: {fileID: 3903221280090396259, guid: e9413e144dad0fa42bf89b64fe8ac01c, type: 3}
   scoreText: {fileID: 135062698}
@@ -316,7 +318,7 @@ GameObject:
   - component: {fileID: 365244772}
   - component: {fileID: 365244771}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,8 +340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 77.419, y: 61.7}
-  m_SizeDelta: {x: 133.8389, y: 42.6537}
+  m_AnchoredPosition: {x: 773.2, y: 36.8}
+  m_SizeDelta: {x: 116.8446, y: 33.675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365244771
 MonoBehaviour:

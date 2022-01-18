@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    int hp=3;
+    public int hp=3;
     public float horizontalInput;
     public float verticalInput;
     public float moveSpeed=15.0f;
     float yMin,yMax,xMin,xMax;
 
+
+
+
+
     public GameObject bullet;
     void Start()
     {
+
+
         var spriteSize = GetComponent<SpriteRenderer>().bounds.size.x * .5f; // Working with a simple box here, adapt to you necessity
  
          var cam = Camera.main;// Camera component to get their size, if this change in runtime make sure to update values
@@ -38,7 +45,10 @@ public class PlayerController : MonoBehaviour
     {
 
         Move();
-       
+        if(hp==0)
+        {
+            Destroy(gameObject);
+        }
        
          
     }
@@ -74,4 +84,8 @@ public class PlayerController : MonoBehaviour
              Destroy(other.gameObject);
          }
     }
+
+
+ 
 }
+
