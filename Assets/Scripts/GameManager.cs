@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject enemyPrefab;
 
+    public GameObject PauseScreen;
+
     bool isPaused=false;
     
     public GameObject swarmPrefab;
@@ -26,21 +28,10 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        Debug.Log(isPaused);
-        if(Input.GetKeyDown(KeyCode.P))
-         {   
-             
-             if(isPaused)
-                Time.timeScale = 1;
-            else
-                Time.timeScale = 0;
-                isPaused=!isPaused;
-
-
-
-
-         }
+    {   if(Input.GetKeyDown(KeyCode.P))
+        {
+            Pause();
+        }
 
     }
 
@@ -62,5 +53,30 @@ public class GameManager : MonoBehaviour
     {
         score+=scoreToAdd;
         scoreText.text = "Score: " + score;
+    }
+
+    public void Pause()
+    {
+        
+         
+             
+             if(isPaused)
+                {
+                    Time.timeScale = 1;
+                    isPaused=!isPaused;
+                    PauseScreen.gameObject.SetActive(false);
+
+                }
+            else
+                {
+                Time.timeScale = 0;
+                isPaused=!isPaused;
+                PauseScreen.gameObject.SetActive(true);
+                }
+
+
+
+
+         
     }
 }
