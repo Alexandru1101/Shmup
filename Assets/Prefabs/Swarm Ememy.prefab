@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209de78fbf23c49489ca2e9fe1cdf6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionAnim: {fileID: 770437165511202973, guid: 020e6fd78dff27d4fbb33d5ce4f9cdff, type: 3}
+  soundController: {fileID: 0}
 --- !u!61 &5073448738699208581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.8}
+    oldSize: {x: 1.35, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -218,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209de78fbf23c49489ca2e9fe1cdf6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionAnim: {fileID: 770437165511202973, guid: 020e6fd78dff27d4fbb33d5ce4f9cdff, type: 3}
+  soundController: {fileID: 0}
 --- !u!61 &3702734336972530666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -235,7 +239,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.8}
+    oldSize: {x: 1.35, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -340,6 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209de78fbf23c49489ca2e9fe1cdf6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionAnim: {fileID: 770437165511202973, guid: 020e6fd78dff27d4fbb33d5ce4f9cdff, type: 3}
+  soundController: {fileID: 0}
 --- !u!61 &1013973262045898162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -357,7 +363,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.8}
+    oldSize: {x: 1.35, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

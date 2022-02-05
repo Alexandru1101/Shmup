@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public GameObject enemyPrefab;
-    
-    
-
+    public GameObject gameOverPanel;
     public GameObject PauseScreen;
-
     bool isPaused=false;
-    
     public GameObject swarmPrefab;
-
     public TextMeshProUGUI scoreText;
     private int score;
+    public bool isGameActive;
+    public Button restartButton;
     void Start()
     {
+        isGameActive=true;
         InvokeRepeating("SpawnEnemies",1,1.5f);
         InvokeRepeating("SpawnSwarm",5,2.5f);
         score=0;
@@ -34,6 +33,9 @@ public class GameManager : MonoBehaviour
         {
             Pause();
         }
+
+        if(isGameActive==false)
+            CancelInvoke();
 
     }
 
@@ -80,5 +82,15 @@ public class GameManager : MonoBehaviour
 
 
          
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+    }
+
+    public void RestartGame() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

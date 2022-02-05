@@ -7,10 +7,13 @@ public class MiniEnemy : MonoBehaviour
     // Start is called before the first frame update
 
     private GameManager gameManager;
+    public GameObject explosionAnim;
+    public GameObject soundController;
     void Start()
     {
         
         gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
+        soundController=GameObject.Find("SoundManager");
     }
 
     // Update is called once per frame
@@ -24,6 +27,8 @@ public class MiniEnemy : MonoBehaviour
          {  
 
              gameManager.UpdateScore(1);
+             Instantiate(explosionAnim,transform.position,transform.rotation);
+             soundController.GetComponent<SoundController>().ExplosionEnemy();   
              Destroy(gameObject);
          }
     }

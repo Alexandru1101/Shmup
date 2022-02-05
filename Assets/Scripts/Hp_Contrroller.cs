@@ -24,11 +24,12 @@ public class Hp_Contrroller : MonoBehaviour
 
     {   
         hp=player.GetComponent<PlayerController>().hp;
-        if(hp==0)
+        if(hp<=0)
           {
               gameObject.SetActive(false);
           }
-        
+        if(hp<0)
+            hp=0;
             healthImg.sprite=healthSprites[hp];
         
     

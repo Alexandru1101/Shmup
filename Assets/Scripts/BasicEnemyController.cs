@@ -7,10 +7,13 @@ public class BasicEnemyController : MonoBehaviour
     // Start is called before the first frame update
     public int hp=2;
     public float speed;
-
+    
+    public GameObject soundController;
     private GameManager gameManager;
+    public GameObject explosionAnim;
     void Start()
-    {
+    {   
+        soundController=GameObject.Find("SoundManager");
         speed=Random.Range(7.0f,10.0f);
         gameManager=GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -21,7 +24,10 @@ public class BasicEnemyController : MonoBehaviour
         transform.Translate(Vector2.down*speed*Time.deltaTime);
 
         if(hp==0)
-            {
+            {    
+                Instantiate(explosionAnim,transform.position,transform.rotation);      
+                soundController.GetComponent<SoundController>().ExplosionEnemy();
+                
                 Destroy(gameObject);
                 gameManager.UpdateScore(1);
             
@@ -38,6 +44,9 @@ public class BasicEnemyController : MonoBehaviour
          if(other.gameObject.CompareTag("Bullet"))
          {
              hp--;
+             
+             
+             
          }
      }
 }

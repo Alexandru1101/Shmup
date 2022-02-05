@@ -177,3 +177,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   speed: 0
+  soundController: {fileID: 0}
+  explosionAnim: {fileID: 7399666649413944894, guid: 02600531f9ef4574590d25c08a464e60, type: 3}

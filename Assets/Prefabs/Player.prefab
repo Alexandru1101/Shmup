@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -97,9 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa189713f737d040b0505ac953f5313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
   horizontalInput: 0
   verticalInput: 0
   moveSpeed: 15
+  gameManager: {fileID: 0}
+  explosionAnim: {fileID: 7399666649413944894, guid: 02600531f9ef4574590d25c08a464e60, type: 3}
   bullet: {fileID: 8117728356372853659, guid: 605b7bc38a1270442ba1d2d9b9b34814, type: 3}
 --- !u!50 &6206738172447333737
 Rigidbody2D:

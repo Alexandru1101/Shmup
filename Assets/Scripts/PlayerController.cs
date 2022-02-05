@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
 
     public int hp=3;
-    public float horizontalInput;
-    public float verticalInput;
-    public float moveSpeed=15.0f;
+    private float horizontalInput;
+    private float verticalInput;
+    private float moveSpeed=15.0f;
     float yMin,yMax,xMin,xMax;
+    public GameManager gameManager;
 
-
+    private GameObject soundController;
+    public GameObject explosionAnim;
 
 
 
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
-
+       soundController=GameObject.Find("SoundManager");
         var spriteSize = GetComponent<SpriteRenderer>().bounds.size.x * .5f; // Working with a simple box here, adapt to you necessity
  
          var cam = Camera.main;// Camera component to get their size, if this change in runtime make sure to update values
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if(hp==0)
         {
             Destroy(gameObject);
+            gameManager.GameOver();
         }
        
          
@@ -74,6 +77,9 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet,transform.position,transform.rotation);
+        soundController.GetComponent<SoundController>().ShootSound(); 
+        
+        
     }
 
 
@@ -81,7 +87,11 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
          {
              hp--;
+             
              Destroy(other.gameObject);
+             Instantiate(explosionAnim,other.transform.position,transform.rotation);
+            soundController.GetComponent<SoundController>().ExplosionEnemy();
+             
          }
     }
 
